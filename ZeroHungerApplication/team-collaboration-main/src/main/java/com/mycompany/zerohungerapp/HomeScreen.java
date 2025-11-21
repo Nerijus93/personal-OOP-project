@@ -15,28 +15,31 @@ import javax.swing.*;
 public class HomeScreen extends JFrame {
 
     public HomeScreen() {
+        
+        // Window title and size
         setTitle("Zero Hunger App");
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-
+        
+        // Big title label at the top of UI
         JLabel pageTitleLabel = new JLabel("Welcome to The Zero Hunger App", SwingConstants.CENTER);
-
         pageTitleLabel.setFont(pageTitleLabel.getFont().deriveFont(30f));
 
+        // Vertical buttons
         JPanel panel = new JPanel();
-
+        panel.setLayout(new GridLayout(0, 1));
+        
+        // Three action buttons
         JButton donationButton = new JButton("Donations Management");
         JButton memberButton = new JButton("Become a Member");
         JButton restaurantButton = new JButton("Restaurant Manager");
-        
-        panel.setLayout(new GridLayout(0, 1));
 
-        // OPEN DonationScreen and SHOW it
+        // Open DonationScreen and Display it
         donationButton.addActionListener(e -> {
-            DonationScreen ds = new DonationScreen();
+            DonationScreen ds = new DonationScreen(this);
             ds.setVisible(true);
-            dispose();
+            this.setVisible(false);
         });
 
         add(pageTitleLabel, "North");

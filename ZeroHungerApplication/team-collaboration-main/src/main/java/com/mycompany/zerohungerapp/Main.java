@@ -10,7 +10,7 @@ package com.mycompany.zerohungerapp;
 public class Main {
 
     public static void main(String[] args) {
-        // Launch HomeScreen when the app starts
+        // Create and show HomeScreen
         HomeScreen homeScreen = new HomeScreen();
         homeScreen.setVisible(true);
     }
